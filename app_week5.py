@@ -381,7 +381,7 @@ def add_categorical_legend(folium_map, title, colors, labels):
 # In[111]:
 
 
-m = folium.Map(location=[42.416775, 5.703790], zoom_start=6).add_to(m)
+m = folium.Map(location=[42.416775, 5.703790], zoom_start=6)
 
 for index,row in df2.iterrows():
     if row['AddressInfo']['Country']['Title'] == 'Spain':
