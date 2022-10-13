@@ -63,7 +63,7 @@ df_chargetime = df[~(df['ChargeTime'] < 0) & ~(df['ChargeTime'] > 24)]
 df_chargetime["ChargeTime"].count()
 
 
-# In[9]:
+# In[108]:
 
 
 df_chargetime2 = df[~(df['ChargeTime'] < 0) & ~(df['ChargeTime'] > 12)]   
@@ -271,7 +271,7 @@ histogram1.add_annotation(x=0.98, y=0.70,
 df_chargetime["ChargeTime"].median()
 
 
-# In[104]:
+# In[110]:
 
 
 #  ik heb een functie gevonden op het internet voor het toevoegen van een categorische legenda:
@@ -378,10 +378,11 @@ def add_categorical_legend(folium_map, title, colors, labels):
     return folium_map
 
 
-# In[103]:
+# In[111]:
 
 
-m = folium.Map(location=[42.416775, 5.703790], zoom_start=6, tiles='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', attr='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors')
+m = folium.Map(location=[42.416775, 5.703790], zoom_start=6, tiles='https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+        attr='Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)').add_to(m)
 
 for index,row in df2.iterrows():
     if row['AddressInfo']['Country']['Title'] == 'Spain':
